@@ -95,15 +95,35 @@ public class AboutFragment extends PreferenceFragmentCompat {
         });
 
         final Preference followOnGithub = findPreference("follow_me_on_github");
-        followOnGithub.setVisible(false);
         followOnGithub.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                //TODO follow on github
+                followOnGithub();
                 return false;
             }
         });
 
+    }
+
+    private void followOnGithub() {
+        if (PreferenceUtil.getBoolean(getActivity(), "in_app_browser",true)){
+            CustomTabActivityHelper.openCustomTab(
+                    getActivity(),
+                    customTabsIntent.build(),
+                    Uri.parse(getActivity().getString(R.string.github_url)),
+                    new CustomFallback() {
+                        @Override
+                        public void openUri(Activity activity, Uri uri) {
+                            super.openUri(activity, uri);
+                        }
+                    });
+        } else {
+            try{
+                getActivity().startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse( getActivity().getString(R.string.github_url))));
+            } catch (android.content.ActivityNotFoundException ex){
+                //TODO 处理错误
+            }
+        }
     }
 
     private void followOnZhihu() {
