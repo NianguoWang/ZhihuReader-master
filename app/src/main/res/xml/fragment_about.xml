@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/author">
+
+        <android.support.v7.preference.Preference android:title="@string/author_name"
+            android:key="author"
+            android:summary="@string/author_description"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/follow_me_on_github"
+            android:key="follow_me_on_github"
+            android:summary="@string/github_url"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/follow_me_on_zhihu"
+            android:key="follow_me_on_zhihu"
+            android:summary="@string/zhihu_account"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/add_friend_wechat"
+            android:key="add_friend_wechat"
+            android:summary="@string/wechat_number"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/support">
+
+        <android.support.v7.preference.Preference android:title="@string/feedback"
+            android:key="feedback"
+            android:summary="@string/feedback_description"/>
+
+        <android.support.v7.preference.Preference android:title="@string/coffee"
+            android:key="coffee"
+            android:summary="@string/coffee_description"/>
+
+        <android.support.v7.preference.Preference android:title="@string/open_source_license"
+            android:key="open_source_license" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/app_name">
+
+        <android.support.v7.preference.Preference
+            android:title="@string/version"
+            android:key="version"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>

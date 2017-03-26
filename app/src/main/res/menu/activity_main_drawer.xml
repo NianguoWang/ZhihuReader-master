@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_main">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_list_black_24dp"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="@string/bookmark" />
+    </group>
+    <group android:checkableBehavior="none"
+        android:id="@+id/group_other">
+        <item
+            android:id="@+id/nav_switch_theme"
+            android:icon="@drawable/ic_brightness_6_black_24dp"
+            android:visible="false"
+            android:title="@string/switch_theme" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/setting" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/about" />
+    </group>
+
+</menu>

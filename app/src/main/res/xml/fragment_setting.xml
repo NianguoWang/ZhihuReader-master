@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory
+        android:title="@string/basic_settings">
+
+        <android.support.v7.preference.CheckBoxPreference
+            android:title="@string/no_picture_mode"
+            android:key="no_picture_mode"
+            android:defaultValue="false"
+            android:summary="@string/no_picture_mode_description" />
+
+        <android.support.v7.preference.CheckBoxPreference
+            android:title="@string/in_app_browser"
+            android:key="in_app_browser"
+            android:defaultValue="true"
+            android:summary="@string/in_app_browser_description" />
+
+        <android.support.v7.preference.ListPreference
+            android:title="@string/time_of_saving_articles"
+            android:key="time_of_saving_articles"
+            android:entries="@array/time_to_save_opts"
+            android:entryValues="@array/time_to_save_values"
+            android:defaultValue="7"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+        android:title="@string/other_settings">
+
+        <android.support.v7.preference.Preference
+            android:title="@string/clear_image_cache"
+            android:key="clear_image_cache"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>
