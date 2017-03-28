@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.wangng.zhihureader.R;
 import com.wangng.zhihureader.ui.about.AboutActivity;
+import com.wangng.zhihureader.ui.bigimage.BigImageActivity;
 import com.wangng.zhihureader.ui.detail.StoryDetailActivity;
 import com.wangng.zhihureader.ui.easteregg.EasterEggActivity;
 import com.wangng.zhihureader.ui.edittheme.AllThemeActivity;
@@ -80,6 +81,12 @@ public class UIHelper {
 
     public static void showOpenLicense(Context context) {
         Intent intent = new Intent(context, OpenLisenceActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void showBigImage(Context context, String imgUrl) {
+        Intent intent = new Intent(context, BigImageActivity.class);
+        intent.putExtra("imgUrl", imgUrl);
         context.startActivity(intent);
     }
 }

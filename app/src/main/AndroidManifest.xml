@@ -29,7 +29,7 @@
             android:name=".ui.setting.SettingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:label="@string/setting"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.about.AboutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
@@ -64,7 +64,12 @@
             android:name=".ui.openlicense.OpenLisenceActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:label="@string/title_activity_open_lisence"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.bigimage.BigImageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/title_activity_big_image"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

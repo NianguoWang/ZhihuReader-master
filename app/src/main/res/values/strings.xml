@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="inner_browser">内置浏览器</string>
     <string name="story_detail">文章详情</string>
+    <string name="title_activity_big_image">图片放大页</string>
 
     <!--navigation-->
     <string name="home">首页</string>
@@ -84,6 +85,7 @@
     <string name="no_bookmark">您还没有收藏过内容呢~~~</string>
     <string name="home_show">首页特别展示</string>
     <string name="title_activity_open_lisence">开源许可</string>
+
     <!--setting-->
 
 </resources>

@@ -5,6 +5,7 @@
     android:layout_height="95dp"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
+    android:stateListAnimator="@drawable/lift_on_touch"
     app:cardElevation="1dp"
     app:cardCornerRadius="1dp"
     android:layout_marginTop="8dp"

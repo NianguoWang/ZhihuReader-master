@@ -7,4 +7,6 @@
     <color name="light_gray_transparent">#CCCC</color>
     <color name="textColorPrimary">#616161</color>
     <color name="viewBackground">@android:color/white</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

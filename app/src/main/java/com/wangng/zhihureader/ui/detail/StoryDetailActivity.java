@@ -22,6 +22,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -42,6 +43,7 @@ import com.wangng.zhihureader.data.model.StoryDetail;
 import com.wangng.zhihureader.data.network.HttpHelper;
 import com.wangng.zhihureader.util.CopyTextToClipboardUtil;
 import com.wangng.zhihureader.util.ToastUtil;
+import com.wangng.zhihureader.util.UIHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -118,6 +120,8 @@ public class StoryDetailActivity extends BaseActivity<DetailPresenter, DetailMod
         webViewSettings.setAppCacheEnabled(false);
         webViewSettings.setBlockNetworkImage(DataManager.getInstance().getPictureMode());
 
+        //对图片的点击事件用js调用java方法，详见 https://juejin.im/post/58d9aca80ce463005713dba6
+        webView.addJavascriptInterface(new JavascriptInterface(mContext), "ImageClickListener");
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -125,6 +129,17 @@ public class StoryDetailActivity extends BaseActivity<DetailPresenter, DetailMod
                 return true;
             }
 
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //这段js函数的功能就是注册监听，遍历所有的img标签，并添加onClick函数，函数的功能是在图片点击的时候调用本地java接口并传递url过去
+                webView.loadUrl("javascript:(function(){"
+                        + "var objs = document.getElementsByTagName(\"img\"); "
+                        + "for(var i=0;i<objs.length;i++)  " + "{"
+                        + "    objs[i].onclick=function()  " + "    {  "
+                        + "        window.ImageClickListener.onImageClick(this.src);  "
+                        + "    }  " + "}" + "})()");
+            }
         });
     }
 
@@ -317,6 +332,20 @@ public class StoryDetailActivity extends BaseActivity<DetailPresenter, DetailMod
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
+    }
+
+    class JavascriptInterface {
+        private Context context;
+
+
+        public JavascriptInterface(Context context) {
+            this.context = context;
+        }
+
+        @android.webkit.JavascriptInterface
+        public void onImageClick(String img) {
+            UIHelper.showBigImage(mContext, img);
+        }
     }
 
 }
