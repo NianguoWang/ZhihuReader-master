@@ -53,4 +53,3 @@ APP截图如下，将知乎日报的主题展示方式改成了TabLayout+ViewPag
 第一个完整的个人项目，写的比较仓促，也有部分代码参考了其他大神开源的项目。<br>
 [纸飞机](https://github.com/TonnyL/PaperPlane)-采用MVP架构，集合了知乎日报、果壳精选和豆瓣一刻的综合性阅读客户端<br>
 [知乎](https://github.com/yiyibb/Zhihu)-高仿知乎日报 Material Design + MVP + RxJava + Retrofit for android<br>
-另外，本人目前正在找工作，欢迎各大公司技术负责人骚扰。
